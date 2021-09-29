@@ -20,15 +20,15 @@ class CommentCrudController extends AbstractCrudController
         return Comment::class;
     }
 
-    /*public function configureCrud(Crud $crud): Crud
+    public function configureCrud(Crud $crud): Crud
     {
         return $crud
             ->setEntityLabelInSingular('Conference Comment')
             ->setEntityLabelInPlural('Conference Comments')
             ->setSearchFields(['author', 'text', 'email'])
-            ->setDefaultSort(['createdAt' => 'DESC'])
+            //->setDefaultSort(['createdAt' => 'DESC'])
         ;
-    }*/
+    }
 
     public function configureFilters(Filters $filters): Filters
     {
