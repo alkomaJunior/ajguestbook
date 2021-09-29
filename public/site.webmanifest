@@ -11,15 +11,6 @@
     // use it to explain what the application does
     "description": "",
 
-    // the preferred URL to be loaded when the user launches the web app
-    // (this is just a hint, so user agents can ignore this value)
-    "start_url": "https://ajguestbook.herokuapp.com/",
-
-    // a relative path (/app/), a host name (https://example.com/) or a subdirectory
-    // (https://example.com/app/) where the manifest is applied to. Any URL outside
-    // of this scope will revert to a normal web page inside a browser tab or window.
-    "scope": "/",
-
     // the preferred orientation of the web app contents
     // (see https://developer.mozilla.org/en-US/docs/Web/Manifest/orientation)
     "orientation": "landscape",
