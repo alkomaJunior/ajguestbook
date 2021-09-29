@@ -20,7 +20,7 @@ class CommentCrudController extends AbstractCrudController
         return Comment::class;
     }
 
-    public function configureCrud(Crud $crud): Crud
+    /*public function configureCrud(Crud $crud): Crud
     {
         return $crud
             ->setEntityLabelInSingular('Conference Comment')
@@ -35,7 +35,7 @@ class CommentCrudController extends AbstractCrudController
         return $filters
             ->add(EntityFilter::new('conference'))
        ;
-    }
+    }*/
 
 
     public function configureFields(string $pageName): iterable
@@ -49,7 +49,7 @@ class CommentCrudController extends AbstractCrudController
         yield TextField::new('photoFilename')
             ->onlyOnIndex()
         ;
-        $createdAt = DateTimeField::new('createdAt')->setFormTypeOptions([
+        /*$createdAt = DateTimeField::new('createdAt')->setFormTypeOptions([
             'html5' => true,
             'years' => range(date('Y'), date('Y') + 5),
             'widget' => 'single_text',
@@ -59,7 +59,7 @@ class CommentCrudController extends AbstractCrudController
         }
         else {
             yield $createdAt;
-        }
+        }*/
     }
 
 }
