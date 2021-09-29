@@ -49,7 +49,7 @@ class CommentCrudController extends AbstractCrudController
         yield TextField::new('photoFilename')
             ->onlyOnIndex()
         ;
-        yield DateTimeField::new('createdAt')->setTimezone('UTC+2');
+        yield DateTimeField::new('createdAt');
     }
 
 }
