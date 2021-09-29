@@ -28,14 +28,14 @@ class CommentCrudController extends AbstractCrudController
             ->setSearchFields(['author', 'text', 'email'])
             ->setDefaultSort(['createdAt' => 'DESC'])
         ;
-    }
+    }*/
 
     public function configureFilters(Filters $filters): Filters
     {
         return $filters
             ->add(EntityFilter::new('conference'))
        ;
-    }*/
+    }
 
 
     public function configureFields(string $pageName): iterable
