@@ -26,7 +26,7 @@ class CommentCrudController extends AbstractCrudController
             ->setEntityLabelInSingular('Conference Comment')
             ->setEntityLabelInPlural('Conference Comments')
             ->setSearchFields(['author', 'text', 'email'])
-            //->setDefaultSort(['createdAt' => 'DESC'])
+            ->setDefaultSort(['createdAt' => 'DESC'])
         ;
     }
 
@@ -49,17 +49,17 @@ class CommentCrudController extends AbstractCrudController
         yield TextField::new('photoFilename')
             ->onlyOnIndex()
         ;
-        yield DateTimeField::new('createdAt')->setFormTypeOptions([
+        $createdAt = DateTimeField::new('createdAt')->setFormTypeOptions([
             'html5' => true,
             'years' => range(date('Y'), date('Y') + 5),
             'widget' => 'single_text',
         ]);
-        /*if (Crud::PAGE_EDIT === $pageName) {
+        if (Crud::PAGE_EDIT === $pageName) {
             yield $createdAt->setFormTypeOption('disabled', true);
         }
         else {
             yield $createdAt;
-        }*/
+        }
     }
 
 }
