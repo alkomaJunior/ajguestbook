@@ -49,6 +49,7 @@ class CommentCrudController extends AbstractCrudController
         yield TextField::new('photoFilename')
             ->onlyOnIndex()
         ;
+        $createdAt = DateTimeField::new('createdAt');
     }
 
 }
