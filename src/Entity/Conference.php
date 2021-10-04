@@ -17,27 +17,27 @@ class Conference
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
      */
-    private $id;
+    private ?int $id;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $city;
+    private ?string $city;
 
     /**
      * @ORM\Column(type="string", length=4)
      */
-    private $year;
+    private ?string $year;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $isInternational;
+    private ?bool $isInternational;
 
     /**
      * @ORM\OneToMany(targetEntity=Comment::class, mappedBy="conference", orphanRemoval=true)
      */
-    private $comments;
+    private ?Collection $comments;
 
     public function __construct()
     {
@@ -46,7 +46,7 @@ class Conference
 
     public function __toString(): string
     {
-        return $this->city.' '.$this->year;
+        return 'This conference happens at ' . $this->city.' in '.$this->year;
     }
 
     public function getId(): ?int
@@ -69,6 +69,14 @@ class Conference
     public function getYear(): ?string
     {
         return $this->year;
+    }
+
+    /**
+     * @param int|null $id
+     */
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
     }
 
     public function setYear(string $year): self
